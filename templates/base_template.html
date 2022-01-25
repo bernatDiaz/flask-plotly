@@ -23,12 +23,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('signup') }}"> Sign up</a>
                 </li>
+                {% if current_user.is_authenticated and current_user.plot_access %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('plot') }}"> Plot</a>
                 </li>
+                {% endif %}
+                {% if current_user.is_authenticated and current_user.admin %}
                 <li class="nav-item">
                     <a class="nav-link" href="/admin"> Admin</a>
                 </li>
+                {% endif %}
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{url_for('logout')}}"> Logout</a>

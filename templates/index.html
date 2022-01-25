@@ -5,5 +5,10 @@
 {% block content %}
 {% if current_user.is_authenticated %}
 <h1>Hello {{user.username}}</h1>
+{% if current_user.admin %}
+<h2>You are an admin user</h2>
+{% else %}
+<h2>You are a standard user{% if current_user.plot_access %} with plot access{% endif %}.</h2>
+{% endif %}
 {% endif %}
 {% endblock %}
