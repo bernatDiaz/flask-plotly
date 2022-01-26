@@ -1,0 +1,9 @@
+{% extends "base_template.html" %}
+
+{% block title %}Data{% endblock %}
+
+{% block content %}
+{% for elem in data %}
+<div><p>{{ elem["Class"] }} : Sepal Length = {{elem["Sepal Length"]}} Sepal Width = {{elem["Sepal Width"]}} Petal Length = {{elem["Petal Length"]}} Petal Width = {{elem["Petal Width"]}}</p></div>
+{% endfor %}
+{% endblock %}

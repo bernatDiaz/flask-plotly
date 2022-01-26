@@ -53,6 +53,11 @@ def data():
     }
     return jsonify(data)
 
+@server.route('/get_data/')
+def get_data():
+    data = df.to_dict('records')
+    return render_template('data.html', data=data)
+
 @login_manager.user_loader
 def load_user(user_id):
     User.query.all()
